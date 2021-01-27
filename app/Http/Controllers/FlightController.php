@@ -12,15 +12,13 @@ class FlightController extends Controller
         $URL = 'http://api.aviationstack.com/v1/flights';
 
         $accessKey = '20ef6b21eff64138f0b7b50e60a67af0';
-        $flightNumber = $request->flight_number;
-        $airlineName = $request->airline_name;
-        $flightStatus = $request->flight_status;
+        $flightIATA = $request->flight_iata;
+
 
         $response = Http::get($URL, [
             'access_key' => $accessKey,
-            'flight_number' => $flightNumber,
-            'airline_name' => $airlineName,
-            'flight_status' => $flightStatus
+            'flight_iata' => $flightIATA,
+            'limit' => 1
         ]);
 
         return response()->json([
