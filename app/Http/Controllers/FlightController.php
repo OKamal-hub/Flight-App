@@ -9,6 +9,10 @@ class FlightController extends Controller
 {
     public function getFlightDetails(Request $request)
     {
+        $request->validate([
+            'flight_iata' => 'required'
+        ]);
+
         $URL = 'http://api.aviationstack.com/v1/flights';
 
         $accessKey = '20ef6b21eff64138f0b7b50e60a67af0';
