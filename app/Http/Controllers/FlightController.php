@@ -14,7 +14,6 @@ class FlightController extends Controller
         $accessKey = '20ef6b21eff64138f0b7b50e60a67af0';
         $flightIATA = $request->flight_iata;
 
-
         $response = Http::get($URL, [
             'access_key' => $accessKey,
             'flight_iata' => $flightIATA,
@@ -22,7 +21,7 @@ class FlightController extends Controller
         ]);
 
         return response()->json([
-           'flight_details' => $response['data']
+           'flight_details' => $response['data'][0]
         ]);
 
     }
