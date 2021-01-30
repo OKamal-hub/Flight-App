@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FlightDetailsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class FlightController extends Controller
 {
-    public function getFlightDetails(Request $request)
+    public function getFlightDetails(FlightDetailsRequest $request)
     {
-        $request->validate([
-            'flight_iata' => 'required'
-        ]);
-
         $URL = 'http://api.aviationstack.com/v1/flights';
 
         $accessKey = '20ef6b21eff64138f0b7b50e60a67af0';
