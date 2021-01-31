@@ -31,7 +31,7 @@ class FlightDetailsRequest extends FormRequest
     public function messages()
     {
         return [
-          'flight_iata.required' => 'Please Enter flight number.'
+          'flight_iata.required' => 'Please enter flight number.'
         ];
     }
 }
